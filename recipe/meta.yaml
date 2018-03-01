@@ -1,24 +1,22 @@
-{% set name = "django-bootstrap3" %}
 {% set version = "9.1.0" %}
-{% set sha256 = "9f56fa30a2c32142a2785148816cc4e14e7efc8699c5f87a8cb5be162a81658d" %}
 
 package:
-  name: {{ name|lower }}
+  name: django-bootstrap3
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/d/django-bootstrap3/django-bootstrap3-{{ version }}.tar.gz
+  sha256: 9f56fa30a2c32142a2785148816cc4e14e7efc8699c5f87a8cb5be162a81658d
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
   noarch: python
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - django >=1.8
