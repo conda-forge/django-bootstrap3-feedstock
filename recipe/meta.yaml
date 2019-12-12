@@ -1,4 +1,4 @@
-{% set version = "11.1.0" %}
+{% set version = "12.0.1" %}
 
 package:
   name: django-bootstrap3
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/django-bootstrap3/django-bootstrap3-{{ version }}.tar.gz
-  sha256: c417b25328fb8e97cb89e1f07d35632602d702e6eaca863328e833939d0d1743
+  sha256: 028ccd9f55efda3723e233e0916be9cf3e6e484bb3ad695f2964a79476a23fa8
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
