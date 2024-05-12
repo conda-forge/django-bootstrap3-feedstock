@@ -1,4 +1,4 @@
-{% set version = "11.1.0" %}
+{% set version = "12.1.0" %}
 
 package:
   name: django-bootstrap3
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/django-bootstrap3/django-bootstrap3-{{ version }}.tar.gz
-  sha256: c417b25328fb8e97cb89e1f07d35632602d702e6eaca863328e833939d0d1743
+  sha256: 0c5a3d7150069843ed0006d4d9cae16ea4624402aa3d569cddb4c3979642a055
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -30,7 +30,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'Bootstrap 3 integration with Django.'
+  summary: Bootstrap 3 integration with Django.
   description: |
     Write Django as usual, and let django-bootstrap3 make template output 
     into Bootstrap 3 code.
